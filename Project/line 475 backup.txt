@@ -1,0 +1,167 @@
+                                                    $emptyarray=[];
+                                                    $coursenamearray=[];
+                                                    $routinsetter=[];
+                                                    if($coursenumber==3)
+                                                    {
+                                                      $sql = "Select course_1,course_2,course_3 from courses_student_info WHERE userid_login='$userid_login'";
+                                                      $result = mysqli_query($conn,$sql);
+                                                      if(mysqli_num_rows($result)!=0)
+                                                        while($row=mysqli_fetch_array($result))
+                                                        {
+                                                          $coursename1=$row[0];
+                                                          $coursename2=$row[1];
+                                                          $coursename3=$row[2];
+
+                                                          array_push($coursenamearray, $row[0],$row[1],$row[2]);
+
+                                                          $sql = "Select facultyname from course_offered WHERE course_code='$coursename1'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {  
+                                                              array_push($emptyarray, $row[0]);
+                                                              
+                                                            }
+                                                          $sql = "Select facultyname from course_offered WHERE course_code='$coursename2'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            { 
+                                                              array_push($emptyarray, $row[0]);
+                                                              
+                                                            }
+                                                          $sql = "Select facultyname from course_offered WHERE course_code='$coursename3'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            { 
+                                                              array_push($emptyarray, $row[0]);
+                                                              
+                                                            }
+
+                                                        }
+                                                        
+                                                        echo $emptyarray[$unique];
+                                                    }
+                                                    elseif($coursenumber==4)
+                                                    {
+                                                      $sql = "Select course_1,course_2,course_3,course_4 from courses_student_info WHERE userid_login='$userid_login'";
+                                                      $result = mysqli_query($conn,$sql);
+                                                      if(mysqli_num_rows($result)!=0)
+                                                        while($row=mysqli_fetch_array($result))
+                                                        {
+                                                          $coursename1=$row[0];
+                                                          $coursename2=$row[1];
+                                                          $coursename3=$row[2];
+                                                          $coursename4=$row[3];
+
+                                                          array_push($coursenamearray, $coursename1,$coursename2,$coursename3,$coursename4);
+
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename1'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename2'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            { 
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename3'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename4'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                            echo $emptyarray[$unique];
+                                                     }
+                                                   }
+
+                                                    elseif($coursenumber==5)
+                                                    {
+                                                      $sql = "Select course_1,course_2,course_3,course_4, course_5 from courses_student_info WHERE userid_login='$userid_login'";
+                                                      $result = mysqli_query($conn,$sql);
+                                                      if(mysqli_num_rows($result)!=0)
+                                                        while($row=mysqli_fetch_array($result))
+                                                        {
+                                                          $coursename1=$row[0];
+                                                          $coursename2=$row[1];
+                                                          $coursename3=$row[2];
+                                                          $coursename4=$row[3];
+                                                          $coursename5=$row[4];
+
+                                                          array_push($coursenamearray, $coursename1,$coursename2,$coursename3,$coursename4,$coursename5);
+
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename1'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename2'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            { 
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename3'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename4'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                          $sql = "Select facultyname,course_time from course_offered WHERE course_code='$coursename5'";
+                                                          $result = mysqli_query($conn,$sql);
+                                                          if(mysqli_num_rows($result)!=0)
+                                                            while($row=mysqli_fetch_array($result))
+                                                            {
+                                                              array_push($emptyarray, $row[0]);
+                                                              array_push($routinsetter, $row[1]);
+                                                            }
+                                                            echo $emptyarray[$unique];
+                                                          }
+                                                      }

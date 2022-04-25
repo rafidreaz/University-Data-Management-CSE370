@@ -1,0 +1,4 @@
+create table course_offered (dep_course varchar(60),room_no_course varchar(60),course_code varchar(60),course_time varchar(60),course_title varchar(60), course_seat int, course_section int );
+
+insert into course_offered values('CSE','UB10201','CSE11001','11:00 AM - 12:30 PM', 'Programming Language',40,01);
+insert into course_offered values('CSE','UB10202','CSE11002','11:00 AM - 12:30 PM', 'Programming Language',40,02),('CSE','UB10203','CSE11003','11:00 AM - 12:30 PM', 'Programming Language',40,03),('CSE','UB20401','CSE11101','8:00 AM - 9:30 AM', 'Programming Language-II',40,01),('CSE','UB20402','CSE11102','8:00 AM - 9:30 AM', 'Programming Language-II',40,02),('CSE','UB20403','CSE11103','8:00 AM - 9:30 AM', 'Programming Language-II',40,03),('CSE','UB40401','CSE22001','3:00 PM - 4:30 AM', 'Data Structures',40,01), ('CSE','UB40402','CSE22002','3:00 PM - 4:30 AM', 'Data Structures',40,02),('CSE','UB40403','CSE22003','3:00 PM - 4:30 AM', 'Data Structures',40,03);
